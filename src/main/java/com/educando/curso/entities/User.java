@@ -1,11 +1,18 @@
 package com.educando.curso.entities;
 
+
+import jakarta.persistence.*;
+
 import java.io.Serializable;
 import java.util.Objects;
 
+@Entity
+@Table(name = "tb_user")
 //Serializable é o processo de converter um objeto em um fluxo de bytes para que ele possa ser armazenado
 public class User implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String email;
